@@ -29,7 +29,7 @@ http://localhost:8080/clamed/task/{id}
   "assigneeName": "Cauã"
 }
 ```
-### PUT (deletar tarefa):
+### DELETE (deletar tarefa):
 
 ```code
 http://localhost:8080/clamed/task/{id}
