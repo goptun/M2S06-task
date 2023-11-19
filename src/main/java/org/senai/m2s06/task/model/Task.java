@@ -1,7 +1,11 @@
 package org.senai.m2s06.task.model;
 
+import org.senai.m2s06.task.database.Database;
 import org.senai.m2s06.task.model.enums.PriorityEnum;
 import org.senai.m2s06.task.model.enums.StatusEnum;
+import org.senai.m2s06.task.model.transport.TaskDTO;
+
+import javax.xml.crypto.Data;
 
 public class Task {
     private Integer id;
@@ -9,11 +13,18 @@ public class Task {
     private StatusEnum status;
     private PriorityEnum priority;
     private String assigneeName;
-
-    public Task(){
+    public Task() {
     }
 
-    public Task(Integer id, String description, StatusEnum status, PriorityEnum priority, String assigneeName){
+    public Task(TaskDTO taskDTO) {
+        this.id = Database.setId();
+        this.description = taskDTO.description();
+        this.status = taskDTO.status();
+        this.priority = taskDTO.priority();
+        this.assigneeName = taskDTO.assigneeName();
+    }
+
+    public Task(Integer id, String description, StatusEnum status, PriorityEnum priority, String assigneeName) {
         this.id = id;
         this.description = description;
         this.status = status;
