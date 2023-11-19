@@ -9,10 +9,22 @@
   "assigneeName": "Matheus"
 }
 ```
-#### GET:
+### GET:
 ```code
 http://localhost:8080/clamed/task
 http://localhost:8080/clamed/task?status=PENDING
 http://localhost:8080/clamed/task?priority=MEDIUM
 http://localhost:8080/clamed/task?owner=Matheus
 ```
+### PUT:
+
+```code
+http://localhost:8080/clamed/task/{id}
+```
+```json
+{
+  "description": "Tarefa 1 Alteração",
+  "status": "COMPLETED",
+  "priority": "HIGH",
+  "assigneeName": "Cauã"
+}
